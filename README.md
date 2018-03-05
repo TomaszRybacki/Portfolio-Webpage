@@ -10,6 +10,7 @@ This project was built for my code skill training. Inspired by the following cha
 
 * HTML5
 * CSS3
+* Sass
 * JavaScript
 
 ## Author

@@ -1,0 +1,273 @@
+.project__wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.box__header {
+  width: 90%;
+  min-width: 300px;
+  padding: 10px;
+  margin: 0 auto;
+  margin-top: 20px;
+  box-sizing: border-box;
+
+  border: solid 4px $light-gray;
+  background-color: $gray;
+  display: flex;
+
+  font: $large $basic;
+  color: $whitish;
+
+  @include mobile {
+    padding: 5px;
+    font-size: $small;
+  }
+
+  &:hover,
+  &:focus {
+    border-left-color: $light-green;
+    cursor: pointer;
+    color: $light-green;
+  }
+}
+
+.arrow {
+  padding: 0 10px;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+.box__body {
+  width: 90%;
+  height: 300px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+
+  border: solid 4px $light-gray;
+  border-top: none;
+  background-color: $gray;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+  animation-duration: 1s;
+  animation-fill-mode: both;
+
+  @include mobile {
+    height: 200px;
+  }
+}
+
+.zoom-in {
+  flex: 0 1 90%;
+  height: 150px;
+  overflow: hidden;
+
+  @include mobile {
+    height: 50px;
+  }
+
+  @include tablet {
+    height: 70px;
+  }
+
+  &:hover {
+    .box__img {
+      transform: scale(1.1);
+      transition: all 0.3s;
+    }
+  }
+}
+
+.box__img {
+  width: 100%;
+}
+
+.box__txt {
+  flex: 0 1 90%;
+  font: $medium $basic;
+  color: $whitish;
+  text-align: center;
+  padding: 10px 0;
+
+  @include mobile {
+    font-size: $xsmall;
+  }
+}
+
+.box__button {
+  flex: 1 1 50%;
+  color: $light-green;
+  text-transform: uppercase;
+  font: $large $basic;
+  text-decoration: none;
+  text-align: center;
+  font-weight: 700;
+
+  @include mobile {
+    font-size: $small;
+  }
+}
+
+.box__button::after {
+  content: "";
+  display: block;
+  width: 0px;
+  height: 2px;
+  background: $light-green;
+  margin: 0 auto;
+  transition: width 0.3s;
+}
+
+.box__button:hover::after {
+  width: 20%;
+
+  @include mobile {
+    width: 50%;
+  }
+}
+
+.box__button:focus::after {
+  width: 20%;
+
+  @include mobile {
+    width: 50%;
+  }
+}
+
+/* **** ANIMATION CSS **** */
+
+.animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+/* slide-animation */
+
+.slideInUp {
+  animation-name: slideInUp300;
+
+   @include mobile {
+    animation-name: slideInUp200;
+  }
+}
+
+@keyframes slideInUp300 {
+  from {
+    height: 300px;
+  }
+  to {
+    height: 0;
+  }
+}
+
+@keyframes slideInUp200 {
+  from {
+    height: 200px;
+  }
+  to {
+    height: 0;
+  }
+}
+
+.slideInDown {
+  animation-name: slideInDown300;
+
+  @include mobile {
+    animation-name: slideInDown200;
+  }
+}
+
+@keyframes slideInDown300 {
+  from {
+    height: 0;
+  }
+  to {
+    height: 300px;
+  }
+}
+
+@keyframes slideInDown200 {
+  from {
+    height: 0;
+  }
+  to {
+    height: 200px;
+  }
+}
+
+.hidden {
+  animation-name: hideContent;
+}
+
+@keyframes hideContent {
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+  10% {
+    opacity: 1;
+    visibility: visible;
+  }
+  20% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.show {
+  animation-name: showContent;
+}
+
+@keyframes showContent {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  30% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  40% {
+    opacity: 0.2;
+    visibility: visible;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+/* arrow */
+
+.rotateClockwise {
+  animation-name: rotate90;
+}
+
+@keyframes rotate90 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(90deg);
+  }
+}
+
+.rotateCounterClockwise {
+  animation-name: rotateMinus90;
+}
+
+@keyframes rotateMinus90 {
+  from {
+    transform: rotate(90deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}

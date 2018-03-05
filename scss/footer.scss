@@ -1,0 +1,18 @@
+.footer-txt {
+  font: $small $basic;
+  color: $light-green;
+  text-align: center;
+  margin: 20px 20px;
+
+  @include mobile {
+    font-size: $xsmall;
+  }
+}
+
+hr {
+  margin: 10px 0;
+  height: 2px;
+  border: none;
+  color: $light-green;
+  background-color: $light-green;
+}
